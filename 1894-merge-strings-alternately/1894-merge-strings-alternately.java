@@ -3,14 +3,12 @@ class Solution {
        StringBuilder sb=new StringBuilder();
        int m=word1.length();
        int n=word2.length();
-       int i=0;
-       int j=0;
-       while(i<m||j<n){
+       for(int i=0;i<Math.max(m,n);i++){
            if(i<m){
-               sb.append(word1.charAt(i++));
+               sb.append(word1.charAt(i));
            }
-           if(j<n){
-               sb.append(word2.charAt(j++));
+           if(i<n){
+               sb.append(word2.charAt(i));
            }
        }
        return sb.toString();
