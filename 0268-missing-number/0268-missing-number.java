@@ -1,16 +1,12 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        HashMap<Integer,Integer> mp=new HashMap<>();
-        for(int i=0;i<nums.length;i++){
-            mp.put(nums[i],nums[i]);
+        HashSet<Integer> st=new HashSet<>();
+        for(int i:nums){
+            st.add(i);
         }
         for(int i=0;i<nums.length;i++){
-            if(mp.containsKey(i)){
-                continue;
-            }
-            else{
-               return i;
-            }
+            if(st.contains(i)) continue;
+            else return i;
         }
         return nums.length;
     }
